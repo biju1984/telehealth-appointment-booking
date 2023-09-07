@@ -31,7 +31,7 @@ This project provides a RESTful API for a telehealth system that allows patients
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/your-username/telehealth-system-api.git
+    git clone https://github.com/biju1984/telehealth-system-api.git
     ```
 
 2. Navigate to the project directory:
