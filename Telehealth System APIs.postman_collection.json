@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "a467d9c4-e445-448e-84d6-b33720573310",
+		"name": "Telehealth System APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Patients",
+			"item": [
+				{
+					"name": "Register a new patient",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"1234567890\",\n  \"DOB\": \"1990-01-01\",\n  \"gender\": \"Male\",\n  \"medicalHistory\": \"None\"\n}"
+						},
+						"url": "localhost:3000/patients"
+					},
+					"response": []
+				},
+				{
+					"name": "Get patient by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/patients/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"patients",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/patients"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Providers",
+			"item": [
+				{
+					"name": "Add a new provider",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Dr. Smith\",\n  \"specialization\": \"Cardiology\",\n  \"email\": \"drsmith@example.com\",\n  \"phone\": \"9876543210\",\n  \"workingHours\": [\"09:00\", \"17:00\"],\n  \"consultationDuration\": 30\n}"
+						},
+						"url": "localhost:3000/providers"
+					},
+					"response": []
+				},
+				{
+					"name": "Get provider by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/providers/d3f87b55-277d-4143-9950-a9ebd9bd83cf"
+					},
+					"response": []
+				},
+				{
+					"name": "Get all providers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/providers"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointments",
+			"item": [
+				{
+					"name": "Book a new appointment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"patientId\": \"patient-uuid\",\n  \"providerId\": \"provider-uuid\",\n  \"date\": \"2023-09-10\",\n  \"time\": \"10:00\",\n  \"duration\": 30,\n  \"status\": \"Pending\",\n  \"consultationNotes\": \"\"\n}"
+						},
+						"url": "localhost:3000/appointments"
+					},
+					"response": []
+				},
+				{
+					"name": "Get appointment by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/appointments/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"appointments",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all appointments",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/appointments"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Consultations",
+			"item": [
+				{
+					"name": "Create a new consultation",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"appointmentId\": \"appointment-uuid\",\n  \"notes\": \"Consultation notes\"\n}"
+						},
+						"url": "localhost:3000/consultations"
+					},
+					"response": []
+				},
+				{
+					"name": "Get consultation by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/consultations/:id",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"consultations",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all consultations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:3000/consultations"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
